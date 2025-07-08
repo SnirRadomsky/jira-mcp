@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "jira-mcp": {
+      "type": "stdio",
+      "command": "/Users/snirradomsky/workspace/jira-mcp/docker-mcp-launcher.sh",
+      "restart": {
+        "enabled": true,
+        "exit_codes": [0, 1, 2],
+        "throttle": 3000
+      },
+      "log_channels": [
+        {
+          "name": "stdout",
+          "level": "info",
+          "prefix": "stdout: "
+        },
+        {
+          "name": "stderr",
+          "level": "error",
+          "prefix": "stderr: "
+        }
+      ]
+    }
+  }
+}
