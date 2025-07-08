@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  jira-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jira-mcp
+    volumes:
+      - ./env:/app/env
+      - ./mcp-server.log:/app/mcp-server.log
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
